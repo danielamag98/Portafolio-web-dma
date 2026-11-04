@@ -1,0 +1,588 @@
+
+/* ---------- 1. Colores ----------*/
+:root {
+  --fondo: #dadad7;          /* gris cálido */
+  --papel: #f4f3ef;          /* tarjetas (más claro) */
+  --papel-oscuro: #e4e3df;   /* tarjetas punteadas */
+  --tinta: #26262a;          /* texto y bordes */
+  --texto: #2f3036;          /* párrafos */
+  --gris: #4a4a4f;           /* texto apagado */
+  --naranja: #b85a0a;        /* botones y adornos */
+  --naranja-texto: #8f4306;  /* naranja oscuro, para letras pequeñas */
+  --naranja-claro: #e8924a;  /* naranja sobre fondo negro */
+  --linea: #a9a9a5;          /* líneas finas */
+}
+
+
+/* ---------- 2. Cosas generales ----------*/
+html {
+  scroll-behavior: smooth;   /* el scroll baja suavecito */
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--tinta);
+  font-family: "Montserrat", sans-serif;
+  padding-top: 70px;         
+  position: relative;
+}
+
+nav, header, section, footer {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--naranja-texto);
+}
+
+.texto {
+  color: var(--texto);
+  line-height: 1.8;
+}
+
+.texto-gris {
+  color: var(--gris);
+}
+
+.centrado {
+  text-align: center;
+}
+
+.seccion {
+  padding-top: 100px;        /* espacio entre secciones */
+}
+
+
+/* ---------- 3. Menú ---------- */
+.menu {
+  background-color: rgba(218, 218, 215, 0.92);
+  border-bottom: 1px solid var(--linea);
+}
+
+.marca {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 18px;
+  color: var(--tinta);
+}
+
+.marca-firma {
+  font-family: Caveat;
+  /*font-family: "Mrs Saint Delafield", cursive;*/
+  font-size: 30px;
+  color: var(--naranja);
+  margin-left: 4px;
+}
+
+.menu .nav-link {
+  color: var(--tinta);
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 8px;
+}
+
+.menu .nav-link:hover {
+  color: var(--naranja-texto);
+}
+
+/* El círculo negro con el sobre */
+.boton-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--tinta);
+  margin-left: 8px;
+  color: var(--fondo);
+  font-weight: bold;
+}
+
+.boton-circulo:hover {
+  background-color: var(--naranja);
+  color: var(--fondo);
+}
+
+
+/* ---------- 4. Portada ---------- */
+.portada {
+  padding-top: 50px;
+}
+
+.titulo-grande {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 44px;           /* tamaño en celular */
+  line-height: 1.1;
+}
+
+.firma {
+  font-family: Caveat;
+  font-size: 48px;
+  line-height: 0.9;
+  color: var(--naranja);
+  display: inline-block;
+  transform: rotate(-5deg);  /* un poquito inclinada */
+}
+
+.firma-chica {
+  font-size: 40px;
+  transform: none;
+}
+
+/* En pantallas más grandes, letras más grandes */
+@media (min-width: 992px) {
+  .titulo-grande { font-size: 84px; }
+  .firma { font-size: 72px; }
+  .firma-chica { font-size: 52px; }
+}
+
+
+/* ---------- 5. Botones en forma de píldora ---------- */
+.boton {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 999px;      
+  font-size: 15px;
+  margin: 0 8px 10px 0;
+}
+
+.boton-negro {
+  background-color: var(--tinta);
+  border: 1.5px solid var(--tinta);
+  color: #f2f2ef;
+  font-weight: 600;
+}
+
+.boton-negro:hover {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+  color: #ffffff;
+}
+
+.boton-borde {
+  border: 2px solid var(--naranja);
+  color: var(--tinta);
+  font-weight: 600;
+}
+
+.boton-borde:hover {
+  background-color: var(--naranja);
+  color: #ffffff;
+}
+
+.boton-chico {
+  font-size: 13Spx;
+  padding: 8px 20px;
+}
+
+
+/* ---------- 6. Foto en arco ----------*/
+.arco-caja {
+  position: relative;
+  width: min(380px, 90vw);   /* 380px como máximo, pero se achica en celular */
+  aspect-ratio: 380 / 500;   /* mantiene la proporción */
+}
+
+.arco-sombra {
+  position: absolute;
+  left: 10%;
+  top: 4%;
+  width: 88%;
+  height: 94%;
+  background-color: var(--naranja);
+  border-radius: 200px 200px 24px 24px;   /* arriba muy redondo = arco */
+}
+
+.arco-negro .arco-sombra {
+  background-color: var(--tinta);
+  left: 8%;
+}
+
+.arco-foto {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88%;
+  height: 94%;
+  border-radius: 200px 200px 24px 24px;
+  overflow: hidden;          /* recorta la foto con la forma del arco */
+}
+
+.arco-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* la foto llena el arco sin deformarse */
+}
+
+.foto-vacia {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2.5px dashed var(--tinta);
+  border-radius: 200px 200px 24px 24px;
+  background-color: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Estrellitas */
+.estrella {
+  position: absolute;
+  fill: none;
+  stroke: var(--tinta);
+  stroke-width: 2.4;
+}
+
+.estrella-1 { width: 52px; right: 0; top: 0; }
+.estrella-2 { width: 40px; left: -8px; bottom: 18%; }
+
+
+/* ---------- 7. Etiquetas flotantes ---------- */
+.etiqueta {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 12px;
+  border-radius: 12px;
+  border: 2px solid var(--tinta);
+  background-color: var(--papel);
+  box-shadow: 3px 3px 0 var(--tinta);   /* sombra "dura", sin difuminar */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.etiqueta-1 { left: -30px; top: 50%; }
+.etiqueta-2 { right: -24px; top: 30%; }
+
+.etiqueta-icono {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: var(--tinta);
+  flex-shrink: 0;
+}
+
+.etiqueta-icono-naranja {
+  background-color: var(--naranja);
+}
+
+/* En celular las etiquetas no caben flotando: las pongo debajo */
+@media (max-width: 575px) {
+  .arco-caja {
+    aspect-ratio: auto;
+    height: auto;
+    padding-bottom: 10px;
+  }
+  .arco-sombra, .arco-foto { position: relative; width: 100%; height: 380px; left: 0; top: 0; }
+  .arco-sombra { display: none; }
+  .etiqueta { position: static; margin-top: 14px; }
+  .estrella { display: none; }
+}
+
+
+/* ---------- 8. Cifras ---------- */
+.cifras {
+  margin-top: 60px;
+  padding-top: 28px;
+  border-top: 1px solid var(--linea);
+}
+
+.cifra {
+  margin-bottom: 20px;
+}
+
+.cifra-numero {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 34px;
+  margin-bottom: 4px;
+}
+
+.cifra-naranja {
+  color: var(--naranja-texto);
+}
+
+.cifra-texto {
+  font-size: 13px;
+  color: var(--gris);
+  margin: 0;
+}
+
+/* Línea vertical entre las cifras (solo en compu) */
+@media (min-width: 992px) {
+  .cifra { border-left: 1.5px solid var(--tinta); padding-left: 24px; }
+  .cifra:first-child { border-left: none; padding-left: 12px; }
+}
+
+
+/* ---------- 9. Títulos ---------- */
+.titulo-seccion {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  .titulo-seccion { font-size: 52px; }
+}
+
+.nota-seccion {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.etiqueta-mono {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  color: var(--naranja-texto);
+  margin: 18px 0 8px;
+}
+
+
+/* ---------- 10. Tarjetas (con sombra dura) ---------- */
+.tarjeta {
+  padding: 28px;
+  border-radius: 16px;
+  border: 2px solid var(--tinta);
+  background-color: var(--papel);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.tarjeta-punteada {
+  border-style: dashed;
+  background-color: var(--papel-oscuro);
+  box-shadow: none;
+}
+
+.tarjeta-titulo {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 16px 0 12px;
+}
+
+.titulo-proyecto {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* Iconito cuadrado de las tarjetas */
+.icono {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.icono-negro    { background-color: var(--tinta); }
+.icono-naranja  { background-color: var(--naranja); }
+.icono-punteado { border: 2px dashed var(--tinta); }
+
+
+/* ---------- 11. Chips (las etiquetas redondas) ---------- */
+.chip {
+  display: inline-block;
+  border: 1.5px solid var(--tinta);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12px;
+  margin: 0 6px 8px 0;
+}
+
+.chip-punteado { border-style: dashed; }
+.chip-chico    { padding: 4px 12px; }
+
+.chip-grande {
+  font-size: 13px;
+  padding: 8px 18px;
+}
+
+.chip-negro {
+  background-color: var(--tinta);
+  color: #f2f2ef;
+}
+
+
+/* ---------- 12. Capturas de proyectos ---------- */
+.captura {
+  height: 200px;
+  border: 2px dashed var(--tinta);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.captura-gris {
+  border-color: #5a5a5f;
+  color: var(--gris);
+}
+
+.captura-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* ---------- 13. Trayectoria ---------- */
+/* Encabezado: título a la izquierda, etiqueta a la derecha, línea debajo */
+.encabezado-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--tinta);
+  margin-bottom: 16px;
+}
+ 
+/* Aquí el título no necesita margen abajo, porque ya lo da el encabezado */
+.encabezado-seccion .titulo-seccion {
+  margin-bottom: 0;
+}
+ 
+.etiqueta-derecha {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--naranja-texto);
+}
+ 
+/* Cada fila de la línea de tiempo: separada por una línea fina */
+.linea-tiempo {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--linea);
+}
+ 
+.linea-titulo {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+ 
+/* La fecha, en letra tipo código y en naranja */
+.fecha {
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  padding-left: 50px;
+  color: var(--naranja-texto);
+  margin-bottom: 8px;        /* en celular queda arriba del texto */
+}
+ 
+.fecha-gris {
+  color: var(--gris);
+}
+
+
+/* ---------- 14. Contacto (bloque negro) ---------- */
+.bloque-negro {
+  background-color: var(--tinta);
+  color: #f2f2ef;
+  border-radius: 32px;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.nota-oscura {
+  font-size: 14px;
+}
+
+.titulo-contacto {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+@media (min-width: 992px) {
+  .titulo-contacto { font-size: 76px; }
+  .bloque-negro { padding: 72px 48px; }
+}
+
+.firma-clara {
+  color: var(--naranja-claro);
+  transform: none;
+}
+
+.texto-claro {
+  color: #d9d8d2;
+  margin-bottom: 28px;
+}
+
+.boton-claro {
+  background-color: var(--fondo);
+  border: 1.5px solid var(--fondo);
+  color: var(--tinta);
+}
+
+.boton-claro:hover {
+  background-color: var(--naranja-claro);
+  border-color: var(--naranja-claro);
+  color: var(--tinta);
+}
+
+.boton-borde-claro {
+  border: 1.5px solid var(--naranja-claro);
+  color: #f2f2ef;
+}
+
+.boton-borde-claro:hover {
+  background-color: var(--naranja-claro);
+  color: var(--tinta);
+}
+
+
+/* ---------- 15. Pie de página ---------- */
+.pie {
+  margin-top: 80px;
+  padding-top: 18px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--tinta);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+}
+
+
+/* ---------- 16. Botón de volver arriba ---------- */
+#boton-subir {
+  position: fixed;           /* se queda fijo en la pantalla */
+  right: 20px;
+  bottom: 20px;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--tinta);
+  color: #ffffff;
+  font-size: 20px;
+  display: none;             /* escondido al inicio; el JS lo muestra */
+}
+
+#boton-subir:hover {
+  background-color: var(--naranja);
+}
