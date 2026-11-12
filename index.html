@@ -3,28 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DM | Portafolio</title>
+  <meta name="description" content="Portafolio de Daniela Magaña, Full Stack Developer (Java) con interés en ciencia de datos y machine learning.">
+  <title>Daniela Magaña | Full Stack Developer</title>
 
-  <!-- Fuentes de Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Mrs+Saint+Delafield&family=Montserrat:wght@400;500&family=DM+Mono&display=swap" rel="stylesheet">
+  <!-- Fuentes de Google (solo las que se usan) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@1,100..1000&family=Caveat:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dela+Gothic+One&family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<body>
+<!-- data-bs-spy: Bootstrap marca en el menú la sección que estás viendo -->
+<body data-bs-spy="scroll" data-bs-target="#barra" data-bs-root-margin="0px 0px -40%" tabindex="0">
 
   <!-- ========== MENÚ ========== -->
-  <nav class="navbar navbar-expand-lg fixed-top menu">
+  <nav id="barra" class="navbar navbar-expand-lg fixed-top menu">
     <div class="container">
       <a class="navbar-brand marca" href="#inicio">Daniela<span class="marca-firma">Magaña</span></a>
 
       <!-- Botón de hamburguesa (solo se ve en celular) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#enlaces" aria-label="Abrir menú">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#enlaces" aria-controls="enlaces" aria-expanded="false" aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -34,6 +36,7 @@
           <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
           <li class="nav-item"><a class="nav-link" href="#trayectoria">Trayectoria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="nav-item">
             <!-- Enlace cv -->
             <a class="boton-circulo" href="src/assets/cv/Daniela Magaña Arana.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver mi CV">
@@ -48,13 +51,22 @@
 
   <!-- ========== PORTADA ========== -->
   <header id="inicio" class="container portada">
+
+    <!-- Franja superior: datos rápidos -->
+    <div class="franja-superior">
+      <span>Portafolio · 2026</span>
+      <!-- Cambia "México" por tu ciudad si quieres (ej. "Morelia · MX") -->
+      <span>México</span>
+      <span><span class="punto-verde" aria-hidden="true"></span>Disponible para posiciones Jr.</span>
+    </div>
+
     <div class="row align-items-center g-5">
 
       <!-- Texto -->
       <div class="col-lg-6">
-        <h1 class="titulo-grande">Hola!<br>soy Daniela</h1>
+        <h1 class="titulo-grande">¡Hola!<br>soy Daniela</h1>
         <p class="firma">Full Stack Developer</p>
-        <p class="texto">Apasionada por la programación en Java y Python, enfocado en la ciencia de datos y el análisis profundo de información. 
+        <p class="texto">Apasionada por la programación en Java y Python, enfocada en la ciencia de datos y el análisis profundo de información.
           Actualmente exploro el machine learning para entender la lógica y el razonamiento de los modelos.</p>
         <a href="#contacto" class="boton boton-negro">Contacto</a>
         <a href="#proyectos" class="boton boton-borde">Ver proyectos</a>
@@ -90,7 +102,7 @@
     <!-- Cifras -->
     <div class="row cifras">
       <div class="col-6 col-lg-3 cifra">
-        <p class="cifra-numero">2</p>
+        <p class="cifra-numero">4</p>
         <p class="cifra-texto">Proyectos construidos</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
@@ -98,7 +110,7 @@
         <p class="cifra-texto">Proyecto integrador en equipo</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
-        <p class="cifra-numero">6</p>
+        <p class="cifra-numero">10</p>
         <p class="cifra-texto">Tecnologías que uso</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
@@ -109,8 +121,24 @@
   </header>
 
 
-  <!-- ========== LO QUE HAGO ========== -->
-  <section id="servicios" class="container seccion">
+  <!-- ========== CINTA DE TECNOLOGÍAS (se desliza sola) ========== -->
+  <!-- El grupo está repetido a propósito: así la animación no tiene saltos -->
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta-pista">
+      <div class="cinta-grupo">
+        <span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
+        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Tableau</span><span>Scrum</span>
+      </div>
+      <div class="cinta-grupo">
+        <span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
+        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Tableau</span><span>Scrum</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========== HABILIDADES ========== -->
+  <section id="habilidades" class="container seccion">
     <p class="centrado nota-seccion">Habilidades</p>
     <h2 class="titulo-seccion centrado">Lo que hago</h2>
 
@@ -139,16 +167,27 @@
       </div>
 
       <div class="col-lg-4">
-        <!-- tarjeta punteada que aún estoy reforzando -->
+        <!-- tarjeta punteada: lo que sigo reforzando -->
         <div class="tarjeta tarjeta-punteada h-100">
           <span class="icono icono-punteado"></span>
-          <h3 class="tarjeta-titulo">Datos ... </h3>
-          <p class="texto">En camino: ... </p>
+          <h3 class="tarjeta-titulo">Datos y machine learning</h3>
+          <p class="texto">En camino: análisis y visualización de datos con SQL, Python y Tableau, mi puerta hacia el machine learning.</p>
           <span class="chip chip-punteado">Python</span>
           <span class="chip chip-punteado">SQL</span>
           <span class="chip chip-punteado">Tableau</span>
         </div>
       </div>
+    </div>
+
+    <!-- Habilidades blandas -->
+    <div class="blandas">
+      <p class="etiqueta-mono">HABILIDADES BLANDAS</p>
+      <span class="chip chip-grande">Trabajo en equipo</span>
+      <span class="chip chip-grande">Comunicación</span>
+      <span class="chip chip-grande">Liderazgo (Scrum Master)</span>
+      <span class="chip chip-grande">Resolución de problemas</span>
+      <span class="chip chip-grande">Adaptabilidad</span>
+      <span class="chip chip-grande">Curiosidad científica</span>
     </div>
   </section>
 
@@ -163,9 +202,9 @@
       <div class="col-lg-4">
         <div class="tarjeta h-100">
           <div><img class="captura-img" src="src/assets/img/coffeemod.jpeg" alt="CoffeeMod"></div>
-          <p class="etiqueta-mono">PROYECTO INTEGRADOR · EQUIPO</p>
-          <h3 class="titulo-proyecto">1001 Labs</h3>
-          <p class="texto">E-commerce de café de especialidad. Participé como Scrum Master gestionando el avance del equipo, 
+          <p class="etiqueta-mono">PROYECTO · 1001 Labs</p>
+          <h3 class="titulo-proyecto">CoffeeMod</h3>
+          <p class="texto">E-commerce de café de especialidad. Participé como Scrum Master gestionando el avance del equipo,
             además de diseñar los wireframes iniciales y desarrollar el footer junto con el formulario de administración.</p>
           <p>
             <span class="chip chip-chico">Java</span>
@@ -173,8 +212,7 @@
             <span class="chip chip-chico">CSS</span>
             <span class="chip chip-chico">JS</span>
           </p>
-          <a href="#" class="boton boton-negro boton-chico" target="_blank">Ver sitio</a>
-          <a href="https://github.com/Vktr1001/CoffeeMod_Frontend.git" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
+          <a href="https://github.com/Vktr1001/CoffeeMod_Frontend.git" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
         </div>
       </div>
 
@@ -184,7 +222,7 @@
           <div><img class="captura-img" src="src/assets/img/km0.jpeg" alt="km0"></div>
           <p class="etiqueta-mono">HACKATÓN · 12 OCT 2026</p>
           <h3 class="titulo-proyecto">Tienda deportiva</h3>
-          <p class="texto">Landing page interactiva desarrollada bajo presión de tiempo. Diseñé e implementé componentes 
+          <p class="texto">Landing page interactiva desarrollada bajo presión de tiempo. Diseñé e implementé componentes
             clave de la interfaz como el banner principal, la sección de contacto y el footer.</p>
           <p>
             <span class="chip chip-chico">HTML</span>
@@ -192,19 +230,77 @@
             <span class="chip chip-chico">Bootstrap</span>
             <span class="chip chip-chico">JS</span>
           </p>
-          <a href="#" class="boton boton-negro boton-chico">Ver sitio</a>
-          <a href="https://github.com/EdGodinez/kilometro.cero.git" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
+          <a href="https://github.com/EdGodinez/kilometro.cero.git" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
         </div>
       </div>
 
-      <!-- Proyecto 3 (pendiente) -->
+      <!-- Proyecto 3 -->
+      <div class="col-lg-4">
+        <div class="tarjeta h-100">
+          <img class="captura-img" src="src/assets/img/kc2.jpeg" alt="Agenda telefónica">
+          <p class="etiqueta-mono">HACKATÓN  · 09 NOV 2026</p>
+          <h3 class="titulo-proyecto">Agenda telefónica</h3>
+          <p class="texto">Agenda por consola desarrollada con arquitectura modular (app, model, service, util) y una clase abstracta Contacto que usa 
+            polimorfismo para manejar contactos personales y empresariales; mi parte fue el Main, con un menú de 9 opciones validado con do-while y try-catch.</p>
+          
+          <p>
+            <span class="chip chip-chico">Java</span>
+            <span class="chip chip-chico">POO</span>
+            <span class="chip chip-chico">IntelliJ</span>
+            <span class="chip chip-chico">Git</span>
+          </p>
+          <a href="https://github.com/danielamag98" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="col-lg-4">
+        <div class="tarjeta h-100">
+          <img class="captura-img" src="src/assets/img/Java.webp" alt="MundoAnimal">
+          <p class="etiqueta-mono">JAVA · POO</p>
+          <h3 class="titulo-proyecto">MundoAnimal</h3>
+          <p class="texto">Jerarquía de animales con herencia, una clase abstracta Animal y una interfaz Movible, donde apliqué @Override y polimorfismo para que 
+            cada animal responda distinto al mismo método.</p>
+          
+          <p>
+            <span class="chip chip-chico">Java</span>
+            <span class="chip chip-chico">Herencia</span>
+            <span class="chip chip-chico">Interfaces</span>
+            <span class="chip chip-chico">Polimorfismo</span>
+          </p>
+          <a href="https://github.com/danielamag98/MundoAnimal" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 5 -->
+      <div class="col-lg-4">
+        <div class="tarjeta h-100">
+          <img class="captura-img" src="src/assets/img/laboratorios.png" alt="Laboratorios">
+
+          <p class="etiqueta-mono">LABORATORIOS · LO QUE APRENDÍ</p>
+          <h3 class="titulo-proyecto">Laboratorios</h3>
+          <p class="texto">Ejercicios del bootcamp donde aprendí a armar sitios de varias páginas con HTML, darles estilo y barra de navegación fija con CSS, practicar
+             lógica con JavaScript y trabajar con ramas por tarea en Git y GitHub.</p>
+          
+          <p>
+            <span class="chip chip-chico">HTML</span>
+            <span class="chip chip-chico">CSS</span>
+            <span class="chip chip-chico">JS</span>
+            <span class="chip chip-chico">Git</span>
+          </p>
+          <a href="https://github.com/danielamag98/Laboratorios-" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 5 .... -->
       <div class="col-lg-4">
         <div class="tarjeta tarjeta-punteada h-100">
           <div class="captura captura-gris">[foto]</div>
           <p class="etiqueta-mono texto-gris">PRÓXIMAMENTE</p>
-          <h3 class="titulo-proyecto texto-gris">[Proyecto]</h3>
-          <p class="texto-gris">Texto.</p>
+          <h3 class="titulo-proyecto texto-gris">Análisis de datos</h3>
+          <p class="texto-gris">Un proyecto con Python, SQL y Tableau para unir mi lado de datos con el desarrollo.</p>
           <span class="chip chip-chico chip-punteado">Python</span>
+          <span class="chip chip-chico chip-punteado">SQL</span>
         </div>
       </div>
 
@@ -221,22 +317,30 @@
         <div class="arco-caja arco-negro">
           <div class="arco-sombra"></div>
           <div class="arco-foto">
-            <img src="src/assets/img/dma2.jpeg" alt="Daniela Magaña">            
+            <img src="src/assets/img/dma2.jpeg" alt="Daniela Magaña">
           </div>
-        </div> 
+        </div>
       </div>
 
       <div class="col-lg-6">
         <p class="nota-seccion">Sobre mí</p>
         <h2 class="titulo-seccion">Código claro,<br>mente curiosa</h2>
         <p class="firma firma-chica">Me gusta entender cómo funcionan las cosas</p>
-        <p class="texto">De la fisioterapia al desarrollo tecnológico. Como Java Full Stack Developer apasionada por la ciencia y 
-          el Machine Learning, me especializo en conectar interfaces dinámicas (HTML/CSS/JS) con lógica backend sólida en Java y 
-          análisis de datos en Python. Mi motor es la curiosidad científica y el deseo de crear tecnología con propósito en equipos 
+        <p class="texto">De la fisioterapia al desarrollo tecnológico. Como Java Full Stack Developer apasionada por la ciencia y
+          el Machine Learning, me especializo en conectar interfaces dinámicas (HTML/CSS/JS) con lógica backend sólida en Java y
+          análisis de datos en Python. Mi motor es la curiosidad científica y el deseo de crear tecnología con propósito en equipos
           colaborativos.</p>
         <span class="chip chip-grande">Claridad</span>
         <span class="chip chip-grande">Curiosidad</span>
         <span class="chip chip-grande chip-negro">Trabajo en equipo</span>
+
+        <!-- Ficha rápida  -->
+        <dl class="ficha">
+          <div class="ficha-fila"><dt>Rol</dt><dd>Full Stack Developer Jr.</dd></div>
+          <div class="ficha-fila"><dt>Formación</dt><dd>Generation México · Java Full Stack</dd></div>
+          <div class="ficha-fila"><dt>Idiomas</dt><dd>Español · Inglés B1</dd></div>
+          <div class="ficha-fila"><dt>Ubicación</dt><dd>México</dd></div>
+        </dl>
       </div>
 
     </div>
@@ -246,76 +350,112 @@
   <!-- ========== TRAYECTORIA ========== -->
   <section id="trayectoria" class="container seccion">
     <!-- Titulo a la izquierda, etiqueta a la derecha y una linea abajo -->
-    <div class="encabezado-section">
+    <div class="encabezado-seccion">
       <h2 class="titulo-seccion">Trayectoria</h2>
       <span class="etiqueta-derecha">POR DÓNDE VOY</span>
     </div>
 
-    <!-- cada fila - flecha a la izquierda (3 col) y el texto a la derecha (9 col)-->
-     <div class="row linea-tiempo">
+    <!-- cada fila - fecha a la izquierda (3 col) y el texto a la derecha (9 col)-->
+    <div class="row linea-tiempo">
       <div class="col-md-3 fecha">2026</div>
       <div class="col-md-9">
-        <h3 class="linea-titulo">Bootcamp Java Full Stack · Generation México</h3>
-        <p class="texto mb-0">Desarrollo web de front a back. Proyecto integrador en equipo y hackaton.</p>
-        <h3 class="linea-titulo">Cursos IBM · SQL y Data Analyst</h3>
+        <h3 class="linea-titulo">Desarrollador Java Full Stack · Generation México</h3>
+        <p class="texto mb-0">Desarrollo web de front a back. Proyecto integrador en equipo y hackatones.</p>
+        <h3 class="linea-titulo mt-4">Cursos IBM · SQL y Data Analyst</h3>
         <p class="texto mb-0">Bases de datos y análisis de datos, mi puerta hacia el machine learning.</p>
       </div>
-     </div>
+    </div>
 
-     <div class="row linea-tiempo">
+    <div class="row linea-tiempo">
       <div class="col-md-3 fecha">2025</div>
       <div class="col-md-9">
         <h3 class="linea-titulo">Competencia MATE ROV 2025</h3>
-        <p class="texto mb-0">Desarrollo adminitrativo, elaboración de manuales técnicos y documentación para el prototipo del vehículo submarino.</p>
+        <p class="texto mb-0">Desarrollo administrativo, elaboración de manuales técnicos y documentación para el prototipo del vehículo submarino.</p>
       </div>
-     </div>
+    </div>
 
     <div class="row linea-tiempo">
       <div class="col-md-3 fecha">2024</div>
       <div class="col-md-9">
-        <h3 class="linea-titulo">Ingeneria en Biomédica · TecNM </h3>
-        <p class="texto mb-0">Formación en Ingeniería biomédica, e innovación tecnológica. Interés en comprender la lógica y el funcionamiento de sistemas.</p>
+        <h3 class="linea-titulo">Ingeniería Biomédica · TecNM</h3>
+        <p class="texto mb-0">Cursé parte de la carrera, donde me acerqué a la innovación tecnológica y despertó mi interés por comprender la lógica y el funcionamiento de sistemas.</p>
       </div>
-     </div>
+    </div>
 
     <div class="row linea-tiempo">
       <div class="col-md-3 fecha">2022</div>
       <div class="col-md-9">
         <h3 class="linea-titulo">Licenciatura en Fisioterapia · UAD campus Morelia</h3>
         <p class="texto mb-0">Profesional enfocada en la evaluación funcional, biomecánica y movimiento humano. Dedicada a la atención integral y rehabilitación
-           para mejorar la calidad de vida del paciente. </p>
+           para mejorar la calidad de vida del paciente.</p>
       </div>
-     </div>
+    </div>
   </section>
 
 
-  <!-- ========== CONTACTO ========== -->
+    <!-- ========== CONTACTO ========== -->
   <section id="contacto" class="container seccion">
     <div class="bloque-negro">
-      <p class="nota-oscura">Contacto</p>
-      <h2 class="titulo-contacto">¿Hablamos?</h2>
-      <p class="firma firma-clara">construyamos algo juntos</p>
-      <p class="texto-claro">Si tienes un proyecto o una idea, escríbeme.</p>
+      <div class="row align-items-center g-4 g-lg-5">
 
-      <a href="daniela.98mg@gmail.com" class="boton boton-claro">Correo</a>
-      <a href="https://github.com/danielamag98" class="boton boton-borde-claro" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/daniela-magana9808" class="boton boton-borde-claro" target="_blank">LinkedIn</a>
+        <!-- Izquierda: texto y enlaces -->
+        <div class="col-lg-5">
+          <p class="nota-oscura">Contacto</p>
+          <h2 class="titulo-contacto">¿Hablamos?</h2>
+          <p class="firma firma-clara">construyamos algo juntos</p>
+          <p class="texto-claro">Si tienes un proyecto, una vacante o una idea, escríbeme.</p>
+
+          <a href="mailto:daniela.98mg@gmail.com" class="boton boton-claro">Correo</a>
+          <a href="https://github.com/danielamag98" class="boton boton-borde-claro" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/daniela-magana9808" class="boton boton-borde-claro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <!-- Derecha: formulario funcional -->
+        <div class="col-lg-7">
+          <form id="formulario-contacto" class="formulario">
+
+            <div class="campos-fila">
+              <div class="campo">
+                <label for="campo-nombre">Nombre</label>
+                <input type="text" id="campo-nombre" name="name" required maxlength="80" autocomplete="name">
+              </div>
+              <div class="campo">
+                <label for="campo-correo">Correo</label>
+                <input type="email" id="campo-correo" name="email" required maxlength="120" autocomplete="email">
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="campo-mensaje">Mensaje</label>
+              <textarea id="campo-mensaje" name="message" required maxlength="1500" rows="4"></textarea>
+            </div>
+
+            <!-- Trampa para bots -->
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button type="submit" id="boton-enviar" class="boton boton-enviar">Enviar mensaje</button>
+            <p id="estado-form" class="estado-form" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
     </div>
   </section>
 
 
   <!-- ========== PIE DE PÁGINA ========== -->
   <footer class="container pie">
-    <span>© <span id="año-actual">2026</span> Daniela Magaña</span>
+    <span>© <span id="anio-actual">2026</span> Daniela Magaña</span>
     <span>Hecho con HTML, CSS y JS</span>
   </footer>
 
-  <!-- Botón para volver arriba (lo controla el JavaScript) -->
+  <!-- Botón para volver arriba (lo controla el JavaScript...) -->
   <button id="boton-subir" aria-label="Volver arriba">↑</button>
 
 
-  <!-- Bootstrap JS y mi JS (siempre al final) -->
+  <!-- Bootstrap JS y mi JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/js/main.js"></script>
 </body>
 </html>
+
