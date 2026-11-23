@@ -104,3 +104,33 @@ formulario.addEventListener("submit", function (evento) {
       botonEnviar.textContent = "Enviar mensaje";
     });
 });
+
+// ---------- 5. Carrusel de proyectos ----------
+var pistaProyectos = document.getElementById("pista-proyectos");
+var flechaIzq = document.getElementById("flecha-izq");
+var flechaDer = document.getElementById("flecha-der");
+
+// Cuánto se mueve cada clic: el ancho de una tarjeta + el espacio entre ellas
+function pasoCarrusel() {
+  var tarjeta = pistaProyectos.querySelector(".carrusel-item");
+  var espacio = parseFloat(getComputedStyle(pistaProyectos).columnGap) || 0;
+  return tarjeta.offsetWidth + espacio;
+}
+
+// Apaga la flecha cuando ya no hay más proyectos hacia ese lado
+function actualizarFlechas() {
+  var maximo = pistaProyectos.scrollWidth - pistaProyectos.clientWidth;
+  flechaIzq.disabled = pistaProyectos.scrollLeft <= 2;
+  flechaDer.disabled = pistaProyectos.scrollLeft >= maximo - 2;
+}
+
+flechaIzq.addEventListener("click", function () {
+  pistaProyectos.scrollBy({ left: -pasoCarrusel(), behavior: "smooth" });
+});
+flechaDer.addEventListener("click", function () {
+  pistaProyectos.scrollBy({ left: pasoCarrusel(), behavior: "smooth" });
+});
+
+pistaProyectos.addEventListener("scroll", actualizarFlechas);
+window.addEventListener("resize", actualizarFlechas);
+actualizarFlechas();

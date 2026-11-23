@@ -196,10 +196,12 @@
   <section id="proyectos" class="container seccion">
     <h2 class="titulo-seccion centrado">Mis proyectos</h2>
 
-    <div class="row g-4">
-
+    <!-- Carrusel: para agregar un proyecto, copia un bloque "carrusel-item" completo y pégalo dentro de la pista -->
+    <div class="carrusel">
+      <div class="carrusel-pista" id="pista-proyectos" tabindex="0" aria-label="Lista de proyectos">
+      
       <!-- Proyecto 1 -->
-      <div class="col-lg-4">
+      <div class="carrusel-item">
         <div class="tarjeta h-100">
           <div><img class="captura-img" src="src/assets/img/coffeemod.jpeg" alt="CoffeeMod"></div>
           <p class="etiqueta-mono">PROYECTO · 1001 Labs</p>
@@ -217,7 +219,7 @@
       </div>
 
       <!-- Proyecto 2 -->
-      <div class="col-lg-4">
+      <div class="carrusel-item">
         <div class="tarjeta h-100">
           <div><img class="captura-img" src="src/assets/img/km0.jpeg" alt="km0"></div>
           <p class="etiqueta-mono">HACKATÓN · 12 OCT 2026</p>
@@ -235,7 +237,7 @@
       </div>
 
       <!-- Proyecto 3 -->
-      <div class="col-lg-4">
+      <div class="carrusel-item">
         <div class="tarjeta h-100">
           <img class="captura-img" src="src/assets/img/kc2.jpeg" alt="Agenda telefónica">
           <p class="etiqueta-mono">HACKATÓN  · 09 NOV 2026</p>
@@ -254,7 +256,7 @@
       </div>
 
       <!-- Proyecto 4 -->
-      <div class="col-lg-4">
+      <div class="carrusel-item">
         <div class="tarjeta h-100">
           <img class="captura-img" src="src/assets/img/Java.webp" alt="MundoAnimal">
           <p class="etiqueta-mono">JAVA · POO</p>
@@ -273,7 +275,7 @@
       </div>
 
       <!-- Proyecto 5 -->
-      <div class="col-lg-4">
+      <div class="carrusel-item">
         <div class="tarjeta h-100">
           <img class="captura-img" src="src/assets/img/laboratorios.png" alt="Laboratorios">
 
@@ -292,8 +294,26 @@
         </div>
       </div>
 
-      <!-- Proyecto 5 .... -->
-      <div class="col-lg-4">
+      <!-- Proyecto 6 -->
+      <div class="carrusel-item">
+        <div class="tarjeta h-100">
+          <img class="captura-img" src="src/assets/img/brightcart.jpeg" alt="Spring Boot">
+
+          <p class="etiqueta-mono">PRÁCTICA · SPRING BOOT</p>
+          <h3 class="titulo-proyecto">BrightCart</h3>
+          <p class="texto">Práctica de Spring Boot que desarrollé: una tienda en línea con arquitectura en capas (Modelo, Repository, Servicio y Controlador) 
+            e inyección de dependencias por constructor.</p>
+          
+          <p>
+            <span class="chip chip-chico">Java</span>
+            <span class="chip chip-chico">Spring Boot</span>
+          </p>
+          <a href="https://github.com/danielamag98/BrightCart---practica" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 7 .... -->
+      <div class="carrusel-item">
         <div class="tarjeta tarjeta-punteada h-100">
           <div class="captura captura-gris">[foto]</div>
           <p class="etiqueta-mono texto-gris">PRÓXIMAMENTE</p>
@@ -303,7 +323,13 @@
           <span class="chip chip-chico chip-punteado">SQL</span>
         </div>
       </div>
+      </div>
 
+      <!-- Flechitas -->
+      <div class="carrusel-controles">
+        <button type="button" class="carrusel-flecha" id="flecha-izq" aria-label="Proyectos anteriores">&#8592;</button>
+        <button type="button" class="carrusel-flecha" id="flecha-der" aria-label="Más proyectos">&#8594;</button>
+      </div>
     </div>
   </section>
 
