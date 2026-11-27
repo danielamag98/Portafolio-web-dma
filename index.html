@@ -6,7 +6,7 @@
   <meta name="description" content="Portafolio de Daniela Magaña, Full Stack Developer (Java) con interés en ciencia de datos y machine learning.">
   <title>Daniela Magaña | Full Stack Developer</title>
 
-  <!-- Fuentes de Google (solo las que se usan) -->
+  <!-- Fuentes de Google  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dela+Gothic+One&family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,16 +17,15 @@
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<!-- data-bs-spy: Bootstrap marca en el menú la sección que estás viendo -->
-<body data-bs-spy="scroll" data-bs-target="#barra" data-bs-root-margin="0px 0px -40%" tabindex="0">
+<body>
 
   <!-- ========== MENÚ ========== -->
   <nav id="barra" class="navbar navbar-expand-lg fixed-top menu">
     <div class="container">
       <a class="navbar-brand marca" href="#inicio">Daniela<span class="marca-firma">Magaña</span></a>
 
-      <!-- Botón de hamburguesa (solo se ve en celular) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#enlaces" aria-controls="enlaces" aria-expanded="false" aria-label="Abrir menú">
+      <!-- Botón de hamburguesa (celular) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#enlaces" aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -38,10 +37,8 @@
           <li class="nav-item"><a class="nav-link" href="#trayectoria">Trayectoria</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="nav-item">
-            <!-- Enlace cv -->
-            <a class="boton-circulo" href="src/assets/cv/Daniela Magaña Arana.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver mi CV">
-              CV
-            </a>
+            <!-- enlace cv -->
+            <a class="boton-circulo" href="src/assets/cv/Daniela Magaña Arana.pdf" target="_blank">CV</a>
           </li>
         </ul>
       </div>
@@ -52,17 +49,16 @@
   <!-- ========== PORTADA ========== -->
   <header id="inicio" class="container portada">
 
-    <!-- Franja superior: datos rápidos -->
+    <!-- datos rápidos -->
     <div class="franja-superior">
       <span>Portafolio · 2026</span>
-      <!-- Cambia "México" por tu ciudad si quieres (ej. "Morelia · MX") -->
       <span>México</span>
-      <span><span class="punto-verde" aria-hidden="true"></span>Disponible para posiciones Jr.</span>
+      <span><span class="punto-verde"></span>Disponible para posiciones Jr.</span>
     </div>
 
     <div class="row align-items-center g-5">
 
-      <!-- Texto -->
+      <!-- Información corta -->
       <div class="col-lg-6">
         <h1 class="titulo-grande">¡Hola!<br>soy Daniela</h1>
         <p class="firma">Full Stack Developer</p>
@@ -82,8 +78,8 @@
           </div>
 
           <!-- Estrellitas decorativas -->
-          <svg class="estrella estrella-1" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 2C27 16 36 25 50 26C36 27 27 36 26 50C25 36 16 27 2 26C16 25 25 16 26 2Z"></path></svg>
-          <svg class="estrella estrella-2" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 2C27 16 36 25 50 26C36 27 27 36 26 50C25 36 16 27 2 26C16 25 25 16 26 2Z"></path></svg>
+          <svg class="estrella estrella-1" viewBox="0 0 52 52"><path d="M26 2C27 16 36 25 50 26C36 27 27 36 26 50C25 36 16 27 2 26C16 25 25 16 26 2Z"></path></svg>
+          <svg class="estrella estrella-2" viewBox="0 0 52 52"><path d="M26 2C27 16 36 25 50 26C36 27 27 36 26 50C25 36 16 27 2 26C16 25 25 16 26 2Z"></path></svg>
 
           <!-- Etiquetas flotantes -->
           <div class="etiqueta etiqueta-1">
@@ -102,7 +98,7 @@
     <!-- Cifras -->
     <div class="row cifras">
       <div class="col-6 col-lg-3 cifra">
-        <p class="cifra-numero">4</p>
+        <p class="cifra-numero">6</p>
         <p class="cifra-texto">Proyectos construidos</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
@@ -110,7 +106,7 @@
         <p class="cifra-texto">Proyecto integrador en equipo</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
-        <p class="cifra-numero">10</p>
+        <p class="cifra-numero">9</p>
         <p class="cifra-texto">Tecnologías que uso</p>
       </div>
       <div class="col-6 col-lg-3 cifra">
@@ -121,17 +117,17 @@
   </header>
 
 
-  <!-- ========== CINTA DE TECNOLOGÍAS (se desliza sola) ========== -->
-  <!-- El grupo está repetido a propósito: así la animación no tiene saltos -->
-  <div class="cinta" aria-hidden="true">
+  <!-- ========== CINTA DE TECNOLOGÍAS  ========== -->
+  <!-- grupo repetido a propósito: así la animación no tiene saltos -->
+  <div class="cinta">
     <div class="cinta-pista">
       <div class="cinta-grupo">
         <span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
-        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Tableau</span><span>Scrum</span>
+        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Scrum</span>
       </div>
       <div class="cinta-grupo">
         <span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
-        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Tableau</span><span>Scrum</span>
+        <span>Git</span><span>APIs REST</span><span>Python</span><span>SQL</span><span>Scrum</span>
       </div>
     </div>
   </div>
@@ -167,14 +163,13 @@
       </div>
 
       <div class="col-lg-4">
-        <!-- tarjeta punteada: lo que sigo reforzando -->
+        <!-- lo que sigo reforzando -->
         <div class="tarjeta tarjeta-punteada h-100">
           <span class="icono icono-punteado"></span>
           <h3 class="tarjeta-titulo">Datos y machine learning</h3>
-          <p class="texto">En camino: análisis y visualización de datos con SQL, Python y Tableau, mi puerta hacia el machine learning.</p>
+          <p class="texto">En camino: análisis y visualización de datos con SQL, Python, mi puerta hacia el machine learning.</p>
           <span class="chip chip-punteado">Python</span>
           <span class="chip chip-punteado">SQL</span>
-          <span class="chip chip-punteado">Tableau</span>
         </div>
       </div>
     </div>
@@ -196,9 +191,9 @@
   <section id="proyectos" class="container seccion">
     <h2 class="titulo-seccion centrado">Mis proyectos</h2>
 
-    <!-- Carrusel: para agregar un proyecto, copia un bloque "carrusel-item" completo y pégalo dentro de la pista -->
+    <!-- Carrusel -->
     <div class="carrusel">
-      <div class="carrusel-pista" id="pista-proyectos" tabindex="0" aria-label="Lista de proyectos">
+      <div class="carrusel-pista" id="pista-proyectos">
       
       <!-- Proyecto 1 -->
       <div class="carrusel-item">
@@ -214,7 +209,7 @@
             <span class="chip chip-chico">CSS</span>
             <span class="chip chip-chico">JS</span>
           </p>
-          <a href="https://github.com/Vktr1001/CoffeeMod_Frontend.git" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/Vktr1001/CoffeeMod_Frontend.git" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -232,7 +227,7 @@
             <span class="chip chip-chico">Bootstrap</span>
             <span class="chip chip-chico">JS</span>
           </p>
-          <a href="https://github.com/EdGodinez/kilometro.cero.git" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/EdGodinez/kilometro.cero.git" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -251,7 +246,7 @@
             <span class="chip chip-chico">IntelliJ</span>
             <span class="chip chip-chico">Git</span>
           </p>
-          <a href="https://github.com/danielamag98" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/danielamag98" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -270,7 +265,7 @@
             <span class="chip chip-chico">Interfaces</span>
             <span class="chip chip-chico">Polimorfismo</span>
           </p>
-          <a href="https://github.com/danielamag98/MundoAnimal" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/danielamag98/MundoAnimal" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -290,7 +285,7 @@
             <span class="chip chip-chico">JS</span>
             <span class="chip chip-chico">Git</span>
           </p>
-          <a href="https://github.com/danielamag98/Laboratorios-" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/danielamag98/Laboratorios-" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -308,7 +303,7 @@
             <span class="chip chip-chico">Java</span>
             <span class="chip chip-chico">Spring Boot</span>
           </p>
-          <a href="https://github.com/danielamag98/BrightCart---practica" class="boton boton-borde boton-chico" target="_blank" rel="noopener noreferrer">Repositorio</a>
+          <a href="https://github.com/danielamag98/BrightCart---practica" class="boton boton-borde boton-chico" target="_blank">Repositorio</a>
         </div>
       </div>
 
@@ -432,8 +427,8 @@
           <p class="texto-claro">Si tienes un proyecto, una vacante o una idea, escríbeme.</p>
 
           <a href="mailto:daniela.98mg@gmail.com" class="boton boton-claro">Correo</a>
-          <a href="https://github.com/danielamag98" class="boton boton-borde-claro" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/daniela-magana9808" class="boton boton-borde-claro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/danielamag98" class="boton boton-borde-claro" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/daniela-magana9808" class="boton boton-borde-claro" target="_blank">LinkedIn</a>
         </div>
 
         <!-- Derecha: formulario funcional -->
@@ -456,11 +451,8 @@
               <textarea id="campo-mensaje" name="message" required maxlength="1500" rows="4"></textarea>
             </div>
 
-            <!-- Trampa para bots -->
-            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
             <button type="submit" id="boton-enviar" class="boton boton-enviar">Enviar mensaje</button>
-            <p id="estado-form" class="estado-form" role="status" aria-live="polite"></p>
+            <p id="estado-form" class="estado-form"></p>
           </form>
         </div>
 

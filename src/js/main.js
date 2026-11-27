@@ -1,7 +1,5 @@
 // ---------- 1. Año automático ----------
 var anio = document.getElementById("anio-actual");
-
-// Le cambio el texto por el año de hoy
 anio.textContent = new Date().getFullYear();
 
 
@@ -11,9 +9,9 @@ var botonSubir = document.getElementById("boton-subir");
 // Cada vez que la persona hace scroll
 window.addEventListener("scroll", function () {
   if (window.scrollY > 400) {
-    botonSubir.style.display = "block";   // ya bajó mucho: muestro el botón
+    botonSubir.style.display = "block";   // si ya bajó mucho: muestro el botón
   } else {
-    botonSubir.style.display = "none";    // está arriba: lo escondo
+    botonSubir.style.display = "none";    // si está arriba: lo escondo
   }
 });
 
@@ -29,43 +27,29 @@ var enlacesMenu = document.querySelectorAll("#enlaces .nav-link");
 
 enlacesMenu.forEach(function (enlace) {
   enlace.addEventListener("click", function () {
-    if (menuMovil.classList.contains("show")) {
-      bootstrap.Collapse.getOrCreateInstance(menuMovil).hide();
-    }
+    menuMovil.classList.remove("show");
   });
 });
 
 
-// ---------- 4. Formulario de contacto (funcional) ----------
-// Usa FormSubmit: manda el mensaje a tu correo sin necesitar servidor propio.
+// ---------- 4. Formulario de contacto ----------
+// FormSubmit: manda el mensaje a mi correo sin necesitar servidor propio.
 var CORREO_DESTINO = "daniela.98mg@gmail.com";
 
 var formulario = document.getElementById("formulario-contacto");
 var botonEnviar = document.getElementById("boton-enviar");
 var estadoForm = document.getElementById("estado-form");
 
-// Muestra un mensaje debajo del botón (tipo: "ok" o "error")
-function mostrarEstado(texto, tipo) {
-  estadoForm.className = "estado-form estado-" + tipo;
-  estadoForm.textContent = texto;
-}
-
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();   // evito que la página se recargue
 
-  // Si el campo trampa tiene algo, es un bot: no envío nada
-  if (formulario.elements["_honey"].value !== "") {
-    return;
-  }
-
   botonEnviar.disabled = true;
   botonEnviar.textContent = "Enviando...";
-  mostrarEstado("", "ok");
 
   var datos = {
-    name: formulario.elements["name"].value.trim(),
-    email: formulario.elements["email"].value.trim(),
-    message: formulario.elements["message"].value.trim(),
+    name: formulario.elements["name"].value,
+    email: formulario.elements["email"].value,
+    message: formulario.elements["message"].value,
     _subject: "Nuevo mensaje desde tu portafolio",
     _template: "table",
     _captcha: "false"
@@ -83,21 +67,18 @@ formulario.addEventListener("submit", function (evento) {
       return respuesta.json();
     })
     .then(function (resultado) {
-      if (resultado.success === "true" || resultado.success === true) {
-        mostrarEstado("¡Gracias! Tu mensaje se envió, te responderé pronto.", "ok");
+      if (String(resultado.success) === "true") {
+        estadoForm.className = "estado-form estado-ok";
+        estadoForm.textContent = "¡Gracias! Tu mensaje se envió, te responderé pronto.";
         formulario.reset();
       } else {
-        throw new Error("No se pudo enviar");
+        estadoForm.className = "estado-form estado-error";
+        estadoForm.textContent = "No se pudo enviar. Escríbeme directo a " + CORREO_DESTINO;
       }
     })
     .catch(function () {
-      // Plan B: que la persona pueda escribirme directo
       estadoForm.className = "estado-form estado-error";
-      estadoForm.textContent = "No se pudo enviar. Escríbeme directo a ";
-      var enlaceCorreo = document.createElement("a");
-      enlaceCorreo.href = "mailto:" + CORREO_DESTINO;
-      enlaceCorreo.textContent = CORREO_DESTINO;
-      estadoForm.appendChild(enlaceCorreo);
+      estadoForm.textContent = "No se pudo enviar. Escríbeme directo a " + CORREO_DESTINO;
     })
     .finally(function () {
       botonEnviar.disabled = false;
@@ -105,19 +86,19 @@ formulario.addEventListener("submit", function (evento) {
     });
 });
 
+
 // ---------- 5. Carrusel de proyectos ----------
 var pistaProyectos = document.getElementById("pista-proyectos");
 var flechaIzq = document.getElementById("flecha-izq");
 var flechaDer = document.getElementById("flecha-der");
 
-// Cuánto se mueve cada clic: el ancho de una tarjeta + el espacio entre ellas
+// cuanto se mueve en cada clic
 function pasoCarrusel() {
   var tarjeta = pistaProyectos.querySelector(".carrusel-item");
-  var espacio = parseFloat(getComputedStyle(pistaProyectos).columnGap) || 0;
-  return tarjeta.offsetWidth + espacio;
+  return tarjeta.offsetWidth + 24;
 }
 
-// Apaga la flecha cuando ya no hay más proyectos hacia ese lado
+// apaga la flecha cuando ya no hay mas proyectos hacia ese lado
 function actualizarFlechas() {
   var maximo = pistaProyectos.scrollWidth - pistaProyectos.clientWidth;
   flechaIzq.disabled = pistaProyectos.scrollLeft <= 2;
@@ -132,5 +113,4 @@ flechaDer.addEventListener("click", function () {
 });
 
 pistaProyectos.addEventListener("scroll", actualizarFlechas);
-window.addEventListener("resize", actualizarFlechas);
 actualizarFlechas();

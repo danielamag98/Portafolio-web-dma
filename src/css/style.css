@@ -19,19 +19,11 @@ body {
   color: var(--tinta);
   font-family: "Montserrat", sans-serif;
   padding-top: 70px;
-  position: relative;
   overflow-x: hidden;
 }
 
-nav, header, section, footer, .cinta { position: relative; z-index: 1; }
-
 a { color: var(--tinta); text-decoration: none; }
 a:hover { color: var(--naranja-texto); }
-
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 3px solid var(--naranja);
-  outline-offset: 3px;
-}
 
 .texto { color: var(--texto); line-height: 1.8; }
 .texto-gris { color: var(--gris); }
@@ -45,7 +37,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .marca-firma, .firma { font-family: "Caveat", cursive; }
 .etiqueta-mono, .etiqueta-derecha, .fecha, .pie, .franja-superior,
-.cinta-grupo span, .ficha dt, .campo label, .captura-codigo {
+.cinta-grupo span, .ficha dt, .campo label {
   font-family: "DM Mono", monospace;
 }
 
@@ -61,8 +53,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .marca-firma { font-size: 30px; color: var(--naranja); margin-left: 4px; }
 
 .menu .nav-link { color: var(--tinta); font-size: 14px; font-weight: bold; margin: 0 8px; }
-.menu .nav-link:hover, .menu .nav-link.active { color: var(--naranja-texto); }
-.menu .nav-link.active { text-decoration: underline; text-underline-offset: 6px; }
+.menu .nav-link:hover { color: var(--naranja-texto); }
 
 .navbar-toggler { border-color: var(--tinta); }
 
@@ -122,7 +113,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 
 /* ========== 6. FOTO EN ARCO Y ETIQUETAS ========== */
-.arco-caja { position: relative; width: min(380px, 90vw); aspect-ratio: 380 / 500; }
+.arco-caja { position: relative; width: 380px; max-width: 90vw; aspect-ratio: 380 / 500; }
 
 .arco-sombra, .arco-foto {
   position: absolute; width: 88%; height: 94%;
@@ -191,10 +182,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .tarjeta-titulo { font-size: 20px; font-weight: 500; margin: 16px 0 12px; }
 .titulo-proyecto { font-size: 26px; margin-bottom: 12px; }
 
-/* Lista de logros dentro de una tarjeta de proyecto */
-.lista-card { padding-left: 18px; margin-bottom: 16px; }
-.lista-card li { color: var(--texto); font-size: 14px; line-height: 1.6; margin-bottom: 8px; }
-
 .icono { display: block; width: 44px; height: 44px; border-radius: 12px; }
 .icono-negro { background-color: var(--tinta); }
 .icono-naranja { background-color: var(--naranja); }
@@ -218,10 +205,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   text-align: center; font-size: 13px;
 }
 .captura-gris { border-color: #5a5a5f; color: var(--gris); }
-.captura-codigo {
-  border-style: solid; background-color: var(--tinta); color: var(--sobre-tinta);
-  font-size: 18px; letter-spacing: 1px;
-}
 .captura-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
 
 /* ========== 10b. CARRUSEL DE PROYECTOS ========== */
@@ -316,12 +299,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .boton-enviar:disabled { opacity: .6; cursor: wait; }
 
 .estado-form { min-height: 24px; margin: 10px 0 0; font-size: 14px; }
-.estado-form a { color: inherit; text-decoration: underline; }
 .estado-ok { color: #9fe3b3; }
 .estado-error { color: #ffb4a2; }
-
-/* Campo trampa para bots: fuera de la pantalla */
-.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
 
 /* ========== 13. PIE Y BOTÓN DE SUBIR ========== */
@@ -360,11 +339,4 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .arco-sombra, .arco-foto { position: relative; width: 100%; height: 380px; left: 0; top: 0; }
   .arco-sombra, .estrella { display: none; }
   .etiqueta { position: static; margin-top: 14px; }
-}
-
-
-/* ========== 16. MENOS ANIMACIÓN (si el dispositivo lo pide) ========== */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .cinta-pista, .punto-verde { animation: none; }
 }
